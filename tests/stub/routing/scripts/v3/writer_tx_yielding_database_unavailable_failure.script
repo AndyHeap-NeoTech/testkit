@@ -5,9 +5,12 @@
 C: BEGIN {}
 S: SUCCESS {}
 C: RUN "RETURN 1 as n" {} {}
-   PULL_ALL
 S: FAILURE {"code": "Neo.TransientError.General.DatabaseUnavailable", "message": "Database is busy doing store copy"}
-   IGNORED
+{?
+    # For drivers that pipeline RUN and PULL
+    C: PULL_ALL
+    S: IGNORED
+?}
 {?
     C: GOODBYE
     S: <EXIT>

@@ -75,3 +75,6 @@ class RoutingV3(RoutingV4x3):
                 self.assertIn("routing", e.msg)
 
         self.assertTrue(failed)
+
+    def test_should_fail_when_reading_from_unexpectedly_interrupting_reader_using_session_run(self):
+        super(RoutingV3, self).test_should_fail_when_reading_from_unexpectedly_interrupting_reader_using_session_run()

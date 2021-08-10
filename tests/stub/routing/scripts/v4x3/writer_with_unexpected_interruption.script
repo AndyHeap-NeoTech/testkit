@@ -3,5 +3,4 @@
 !: AUTO RESET
 
 C: RUN "RETURN 1 as n" {} {"db": "adb"}
-   PULL {"n": 1000}
 S: <EXIT>
